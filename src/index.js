@@ -55,7 +55,7 @@ function expressionCalculator(expr) {
       if (copyArr[i] === '(') {
         tempStr = '';
         temp++;
-        tempStr += `${i}${copyArr[i]}`;
+        tempStr += `${i}----${copyArr[i]}`;
       } else if (copyArr[i] === ')') {
         tempStr += copyArr[i];
         if (temp > max) {
@@ -76,8 +76,9 @@ function expressionCalculator(expr) {
       }
     }
     debugger;
-    let start = maxStr[0];
-    let arr = maxStr.slice(2, maxStr.length - 1).split(' ');
+    let a = maxStr.split('----');
+    let start = +a[0];
+    let arr = a[1].slice(1, a[1].length - 1).split(' ');
 
     let lengthOfSlice = arr.length;
 
